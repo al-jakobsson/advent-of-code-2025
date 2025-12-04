@@ -1,6 +1,6 @@
 <?php
 
-// Day 5
+// Fucking day 1
 
 define('DIAL_MIN', 0);
 define('DIAL_MAX', 99);
