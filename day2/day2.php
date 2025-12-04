@@ -29,7 +29,6 @@ function get_sum_of_ids_with_patterns_repeated_n_times(array $id_ranges): int {
                 }
                 $test_id        = str_repeat($pattern, $id_len / $pattern_len);
                 if ($test_id === $id) {
-                    $invalid_ids[$id_range][] = $id;
                     $sum_of_invalid_ids += (int) $id;
                     break;
                 }
@@ -49,7 +48,6 @@ function get_sum_of_ids_with_patterns_repeated_twice(array $id_ranges): int {
             if ($len % 2 === 0) {
                 $half = $len / 2;
                 if (substr($id, 0, $half) === substr($id, $half)) {
-                    $invalid_ids[$id_range][] = $id;
                     $sum_of_invalid_ids += (int) $id;
                 }
             }
