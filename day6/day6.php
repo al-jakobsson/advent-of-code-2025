@@ -113,4 +113,3 @@ for ($i = 0; $i < count($ops); $i++) {
     }
 }
 echo "Part 2: $sum\n";
-
