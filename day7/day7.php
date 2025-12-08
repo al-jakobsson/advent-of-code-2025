@@ -33,17 +33,17 @@ $init   = array_shift($levels);
 for ($i = 0; $i < strlen($init); $i++) {
     if ($init[$i] === 'S') {
         $current = [$i => 1];
+        break;
     }
 }
 foreach ($levels as $row) {
     $next = [];
-    foreach ($current as $col => $_) {
-        $cell = $row[$col];
-        if ($cell === '^') {            
-            $next[$col-1]   = ($next[$col-1] ?? 0) + $current[$col];
-            $next[$col+1]   = ($next[$col+1] ?? 0) + $current[$col];
+    foreach ($current as $col => $count) {
+        if ($row[$col] === '^') {            
+            $next[$col-1]   = ($next[$col-1] ?? 0) + $count;
+            $next[$col+1]   = ($next[$col+1] ?? 0) + $count;
         } else {
-            $next[$col]     = ($next[$col] ?? 0) + $current[$col];
+            $next[$col]     = ($next[$col] ?? 0) + $count;
         }
     }
     $current = $next;
